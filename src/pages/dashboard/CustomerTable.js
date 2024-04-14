@@ -48,55 +48,46 @@ const headCells = [
 const bodyCells = [
   {
     id: 1,
-    align: 'left',
     icons: <Avatar />,
     username: 'Jhon Doe'
   },
   {
     id: 2,
-    align: 'left',
     icons: <Avatar />,
     username: 'Virat Kholi'
   },
   {
     id: 3,
-    align: 'right',
     icons: <Avatar />,
     username: 'Rohit Sharma'
   },
   {
     id: 4,
-    align: 'left',
     icons: <Avatar />,
     username: 'MS Dhoni'
   },
   {
     id: 5,
-    align: 'left',
     icons: <Avatar />,
     username: 'SpeedDemon87'
   },
   {
     id: 6,
-    align: 'left',
     icons: <Avatar />,
     username: 'HoopsJunkie55'
   },
   {
     id: 7,
-    align: 'left',
     icons: <Avatar />,
     username: 'GoalGetter99'
   },
   {
     id: 8,
-    align: 'left',
     icons: <Avatar />,
     username: 'FitnessFreak123'
   },
   {
     id: 9,
-    align: 'left',
     icons: <Avatar />,
     username: 'AceAthlete24'
   }
@@ -182,7 +173,9 @@ export default function OrderTable() {
           position: 'relative',
           display: 'block',
           maxWidth: '100%',
-          '& td, & th': { whiteSpace: 'nowrap' }
+          '& td, & th': { whiteSpace: 'nowrap' },
+          boxShadow: "0px 8px 4px 0px rgba(0,0,0,0.21)"
+
         }}
       >
         <Table
@@ -193,7 +186,8 @@ export default function OrderTable() {
             },
             '& .MuiTableCell-root:last-of-type': {
               pr: 3
-            }
+            },
+            background:"white",
           }}
         >
           <TableBody>
@@ -211,8 +205,8 @@ export default function OrderTable() {
                   key={row.id}
                   selected={isItemSelected}
                 >
-                  <TableCell align="left">{row.icons}</TableCell>
-                  <TableCell align="right">{row.username}</TableCell>
+                  <TableCell align="center">{row.icons}</TableCell>
+                  <TableCell align="left">{row.username}</TableCell>
                 </TableRow>
               );
             })}
